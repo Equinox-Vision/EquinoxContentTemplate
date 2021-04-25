@@ -39,6 +39,20 @@ Now build the asset bundle with `Assets -> Build All Asset Bundles`.
 
 The asset bundles will appear in the `Builds/Assets` folder under the repo checkout's root directory. Send them to Equinox Developers to be included in the platform.
 
+## Animator triggers
+
+(very much beta / under development)
+
+Any animators set on any game objects can and will be triggered with the following triggers, when circumstances are right:
+
+* `Touch` - when the user touches the prefab root collider
+* `Correct` - when the user participates in a quiz or a game which has correct / incorrect semantics
+* `Wrong` - when the user participates in a quiz or a game which has correct / incorrect semantics
+
+These animator triggers gan do whatever animations are appropriate, including just hiding and showing (disabling / enabling) prefabs.
+
+There is an example with an animator, some prefabs and animations in the `EquinoxPrefabSupport/Effects` folder. To use it, drop the `CorrectEffect` and `WrongEffect` prefabs (which you will need to heavily edit to include resources you need there) into the `EqPoi` prefab, and set its animator to the `CorrectWrongController`. When the object is used in a game context, it will behave as desiged.
+
 ## Some additional notes and information
 
 * The `MessageCanvas` and `PhotoCanvas` prefabs in the asset are mandatory, and with their specific hierarchy structure, though you can style them as you wish.
